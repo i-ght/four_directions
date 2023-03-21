@@ -150,7 +150,7 @@ function codex() {
   gfx.translate(origin, origin);
 
   const spiral = constructSpiral();
-  const phase = {gfx: gfx, spiral: spiral, spaceUnit: spaceUnit, index: 0};
+  const phase = {gfx, spiral, spaceUnit, index: 0};
   
   setInterval(changePhase, 1000/144, phase)
 }
