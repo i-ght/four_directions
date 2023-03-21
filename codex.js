@@ -132,14 +132,14 @@ function changePhase(phase) {
     gfx.clearRect(x*spaceUnit, y*-spaceUnit, spaceUnit, spaceUnit) ||
     fillRect(gfx, color, x*spaceUnit, y*-spaceUnit, spaceUnit, spaceUnit);
 
-    const [x, y] = dequeue(spiral);
-    const color = dequeue(colors);
-    fillSpace(color, x, y);
+  const [x, y] = dequeue(spiral);
+  const color = dequeue(colors);
+  fillSpace(color, x, y);
 
-    if (phase.index++ >= 63) {
-      phase.index = 0;
-      dequeue(colors);
-    }
+  if (phase.index++ >= 63) {
+    phase.index = 0;
+    dequeue(colors);
+  }
 }
 
 function codex() {
@@ -152,5 +152,5 @@ function codex() {
   const spiral = constructSpiral();
   const phase = {gfx, spiral, spaceUnit, index: 0};
   
-  setInterval(changePhase, 1000/144, phase)
+  setInterval(changePhase, 1000/13, phase)
 }
