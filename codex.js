@@ -50,7 +50,7 @@ const QUADRANT = {
   IV: 4
 };
 
-function idQuad(x, y) {
+function idRectQuad(x, y) {
   /* coordinates are I (+; +), II (−; +), III (−; −), and IV (+; −).  */
 
   /* get coordinate of rect not at origin */
@@ -93,7 +93,7 @@ function constructSpiral() {
   
   for (const [y, xs] of cartesianGrid) {
     for (const x of xs) {
-      const id = idQuad(x, y);
+      const id = idRectQuad(x, y);
       switch (id) {
         case QUADRANT.I:
           i.push([x, y]);
