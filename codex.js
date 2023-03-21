@@ -144,8 +144,8 @@ function changePhase(phase) {
 
 function codex() {
   const [canvas, gfx] = getGfxCtx();
-  const totalSpaceToOccupy = canvas.width / PHI;
-  const spaceUnit = totalSpaceToOccupy / 8;
+  const spaceArea = canvas.width / PHI;
+  const spaceUnit = spaceArea / 8;
   const origin = spaceUnit * 4;
   gfx.translate(origin, origin);
 
