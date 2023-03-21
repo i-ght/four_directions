@@ -6,17 +6,6 @@ function dequeue(selections) {
   return ret;
 }
 
-function selectRandomColor(selections) {
-  if (selections.length === 0) {
-    return [
-      Math.floor(Math.random() * 256),
-      Math.floor(Math.random() * 256),
-      Math.floor(Math.random() * 256)
-    ];
-  }
-  return selections[parseInt(Math.random() * selections.length)];
-}
-
 function range(size, startAt = 0) {
   return [...Array(size).keys()].map(i => i + startAt);
 }
@@ -154,7 +143,6 @@ function changePhase(phase) {
 }
 
 function codex() {
-
   const [canvas, gfx] = getGfxCtx();
   const totalSpaceToOccupy = canvas.width / PHI;
   const spaceUnit = totalSpaceToOccupy / 8;
