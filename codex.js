@@ -136,7 +136,7 @@ function changePhase(phase) {
   const color = dequeue(colors);
   fillSpace(color, x, y);
 
-  if (phase.index++ >= 63) {
+  if (phase.index++ === 63) {
     phase.index = 0;
     dequeue(colors);
   }
@@ -152,5 +152,5 @@ function codex() {
   const spiral = constructSpiral();
   const phase = {gfx, spiral, spaceUnit, index: 0};
   
-  setInterval(changePhase, 1000/13, phase)
+  setInterval(changePhase, 1000/60, phase)
 }
